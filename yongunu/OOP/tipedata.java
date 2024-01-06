@@ -1,4 +1,4 @@
-package BelajarGiat.yongunu;
+package OOP;
 
 public class tipedata {
     public static void main(String[] args) {

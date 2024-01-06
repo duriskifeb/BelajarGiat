@@ -1,4 +1,4 @@
-package BelajarGiat.yongunu;
+package OOP;
 
 import java.io.IOException;
 import java.io.FileInputStream;

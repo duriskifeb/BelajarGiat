@@ -1,4 +1,4 @@
-package BelajarGiat.yongunu;
+package OOP;
 
 import java.util.Scanner;
 

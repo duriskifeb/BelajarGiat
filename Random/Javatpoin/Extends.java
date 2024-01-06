@@ -40,9 +40,6 @@ public class Extends {
         // Memanggil metode yang ada di kelas anak (Kucing)
         kucing.bersuaranya();
         
-        kucing.makan();
-
-        
-        
+        kucing.makan();   
     }
 }

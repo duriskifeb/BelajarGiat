@@ -1,4 +1,4 @@
-package BelajarGiat.yongunu;
+package OOP;
 
 public class casting {
     public static void main(String[] args) {
