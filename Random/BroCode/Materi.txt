@@ -1,0 +1,5 @@
+--> cakupan variable 
+
+local = decalred inside a method visible only to that method
+
+global = decalred outside a method, but whitin a class visible to all parts of class
