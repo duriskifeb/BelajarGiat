@@ -1,0 +1,21 @@
+Queue digunakan untuk mengimplementasikan struktur data antrian (queue).
+Antrian adalah struktur data yang mengikuti prinsip FIFO (First In, First Out),
+yang berarti elemen pertama yang dimasukkan ke dalam antrian akan menjadi elemen pertama yang diambil.
+
+Kelas Queue merupakan bagian dari paket java.util dan merupakan antarmuka (interface) yang diterapkan oleh beberapa kelas konkret, 
+seperti LinkedList dan PriorityQueue, untuk menyediakan operasi-operasi dasar pada antrian.
+
+Methode yanga ada pada Quee : 
+
+add(E element) atau offer(E element): Menambahkan elemen ke dalam antrian.
+
+-> bedanya dari offer adalah Metode offer melakukan hal yang sama seperti add, namun jika antrian penuh, 
+  ia akan mengembalikan false tanpa melemparkan pengecualian.
+
+remove() atau poll(): Menghapus dan mengembalikan elemen pertama dari antrian.
+
+element() atau peek(): Mengembalikan elemen pertama tanpa menghapusnya dari antrian.
+
+size(): Mengembalikan jumlah elemen dalam antrian.
+
+isEmpty(): Memeriksa apakah antrian kosong.

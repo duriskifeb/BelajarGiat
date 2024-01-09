@@ -1,0 +1,23 @@
+Stack  : 
+
+digunakan untuk mengimplementasikan struktur data tumpukan (stack). 
+Tumpukan adalah struktur data yang mengikuti prinsip LIFO (Last In, First Out), 
+yang berarti elemen terakhir yang dimasukkan ke dalam tumpukan akan menjadi elemen pertama yang diambil.
+
+Kelas Stack menyediakan metode-metode untuk memanipulasi tumpukan,
+seperti push (menambahkan elemen ke tumpukan) dan pop (menghapus elemen dari tumpukan). 
+
+Berikut adalah beberapa metode umum yang disediakan oleh kelas Stack
+
+methode yang digunakan : 
+
+push(Object item):  Menambahkan elemen ke tumpukan.
+
+pop(): Menghapus dan mengembalikan elemen teratas dari tumpukan.
+
+peek(): Mengembalikan elemen teratas tanpa menghapusnya dari tumpukan.
+
+empty(): Memeriksa apakah tumpukan kosong.
+
+search(Object o): Mencari elemen tertentu dalam tumpukan dan mengembalikan posisi indeksnya.
+-> dan untuk pengurutan nya indeksnya di hitung mulai bawah sendiri .!
