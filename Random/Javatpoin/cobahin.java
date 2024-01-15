@@ -254,7 +254,9 @@ class Lelang {
         String username = input.next();
         System.out.print("Password : ");
         String password = input.next();
+        
         int id;
+        
         if (!arrPembeli.isEmpty()) {
             id = arrPembeli.get(arrPembeli.size() - 1).getId() + 1;
         } else {
