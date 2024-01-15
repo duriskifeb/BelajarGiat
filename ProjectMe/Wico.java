@@ -156,12 +156,13 @@ public class Wico {
     ArrayList<Pembeli> simpanPembeli = new ArrayList<>();
     private Pembeli sengTuku;
     
-    public Jualan() {
-        Pembeli pembeli = new Pembeli(1, null, null, null)
+    public Wico() {
+        Pembeli pembeli = new Pembeli(1, riski, riski123, riski123);
     }
 
     public static void main(String[] args) {
-        
+        Wico wey = new Wico();
+        wey.
     }
 
     Scanner input = new Scanner(System.in);
