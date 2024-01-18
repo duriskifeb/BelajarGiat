@@ -1,49 +1,16 @@
-package 
-
-import java.util.Scanner;
+package OOP;
 
 public class Tes {
-    private String name;
-    private int age;
+    public static void main(String[] args) throws InterruptedException {
+        String text = "Bergerak terus menerus ke Kiri ";
+        int delay = 100; // milidetik
 
-    public Tes(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+        while (true) {
+            System.out.print("\r" + text);
+            Thread.sleep(delay);
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Meminta pengguna untuk memasukkan nama
-        System.out.print("Masukkan nama: ");
-        String inputName = scanner.nextLine();
-
-        // Meminta pengguna untuk memasukkan umur
-        System.out.print("Masukkan umur: ");
-        int inputAge = scanner.nextInt();
-
-        // Membuat objek Person berdasarkan input pengguna
-        Person person = new Person(inputName, inputAge);
-
-        // Menampilkan hasil
-        System.out.println("\nInformasi Person:");
-        System.out.println("Nama: " + person.getName());
-        System.out.println("Umur: " + person.getAge());
+            // Geser karakter ke kiri
+            text = text.substring(1) + text.charAt(0);
+        }
     }
 }

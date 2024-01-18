@@ -30,31 +30,46 @@ public class TebakAngka {
     }
 
     private void initialize() {
-        frame = new JFrame();
-        frame.setTitle("Game Tebak Angka");
-        frame.setSize(400, 200);
+        frame = new JFrame("Game Tebak Angka");
+        frame.setSize(800, 500); // Menyesuaikan lebar frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Membuat panel untuk background
+        JPanel backgroundPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                // Menggambar background gambar di sini
+                ImageIcon background = new ImageIcon(getClass().getResource("KampusTelu.jpg"));
+                Image image = background.getImage();
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+
+        // Menambahkan panel background ke frame
+        frame.setContentPane(backgroundPanel);
+
         // Menggunakan GridBagLayout untuk presisi center
-        frame.setLayout(new GridBagLayout());
+        backgroundPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5); // Membuat jarak antar elemen
 
         tebakanField = new JTextField(10);
         gbc.gridx = 0;
         gbc.gridy = 0;
-        frame.add(tebakanField, gbc);
+        backgroundPanel.add(tebakanField, gbc);
 
         tebakButton = new JButton("Tebak");
         gbc.gridx = 1;
         gbc.gridy = 0;
-        frame.add(tebakButton, gbc);
+        backgroundPanel.add(tebakButton, gbc);
 
         infoLabel = new JLabel("Tebak angka antara " + min + " - " + max);
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 2;
-        frame.add(infoLabel, gbc);
+        backgroundPanel.add(infoLabel, gbc);
     }
 
     private void runGame() {
