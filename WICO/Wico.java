@@ -1,4 +1,4 @@
-package ProjectMe;
+package WICO;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -399,121 +399,130 @@ public class Wico {
         }
     }
 
-    
+    public static void njajan() {
+        ArrayList<MakananMinuman> keranjangBelanja = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
+        int pilihan = 0;
+        double totalHarga = 0;
 
-        public static void njajan() {
-            Scanner input = new Scanner(System.in);
-            int pilihan = 0;
-            double totalHarga = 0;
-            ArrayList<MakananMinuman> keranjangBelanja = new ArrayList<>();
+        while (pilihan != 3) {
+            System.out.println("\nMenu Makanan dan Minuman:");
+            System.out.println("1. Makanan");
+            System.out.println("2. Minuman");
+            System.out.println("3. Checkout\n");
+            System.out.print("Masukkan pilihan anda : ");
+            pilihan = input.nextInt();
 
-            while (pilihan != 3) {
-                System.out.println("\nMenu Makanan dan Minuman:");
-                System.out.println("1. Makanan");
-                System.out.println("2. Minuman");
-                System.out.println("3. Checkout");
-                System.out.print("Masukkan pilihan anda: ");
-                pilihan = input.nextInt();
-
-                switch (pilihan) {
-                    case 1:
-                        beliMakanan(input, keranjangBelanja);
-                        break;
-                    case 2:
-                        beliMinuman(input, keranjangBelanja);
-                        break;
-                    case 3:
-                        totalHarga = tampilkanCheckout(totalHarga, keranjangBelanja, input);
-                        keranjangBelanja.clear();
-                        totalHarga = 0;
-                        break;
-                    default:
-                        System.out.println("Pilihan tidak valid.");
-                        break;
-                }
-            }
-        }
-
-        
-
-        public static void beliMakanan(Scanner input, ArrayList<MakananMinuman> keranjangBelanja) {
-            System.out.println("\nDaftar Makanan:");
-            System.out.println("1. Nasi Goreng - Rp. 20.000");
-            System.out.println("2. Mie Goreng - Rp. 18.000");
-            System.out.println("3. Sate Ayam - Rp. 25.000");
-            System.out.print("Masukkan pilihan anda: ");
-            int pilihanMakanan = input.nextInt();
-
-            switch (pilihanMakanan) {
+           
+            switch (pilihan) {
                 case 1:
-                    keranjangBelanja.add(new Makanan("Nasi Goreng", 20000, 1));
+                    beliMakanan(input, keranjangBelanja);
                     break;
                 case 2:
-                    keranjangBelanja.add(new Makanan("Mie Goreng", 18000, 2));
+                    beliMinuman(input, keranjangBelanja);
                     break;
                 case 3:
-                    keranjangBelanja.add(new Makanan("Sate Ayam", 25000, 3));
+                    totalHarga = tampilkanCheckout(totalHarga, keranjangBelanja, input);
+                    keranjangBelanja.clear();
+                    totalHarga = 0;
                     break;
                 default:
                     System.out.println("Pilihan tidak valid.");
-                    return;
+                    break;
             }
         }
+    }
 
-        public static void beliMinuman(Scanner input, ArrayList<MakananMinuman> keranjangBelanja) {
-            System.out.println("\nDaftar Minuman:");
-            System.out.println("1. Es Teh - Rp. 5.000");
-            System.out.println("2. Es Jeruk - Rp. 7.000");
-            System.out.println("3. Kopi - Rp. 8.000");
-            System.out.print("Masukkan pilihan anda: ");
-            int pilihanMinuman = input.nextInt();
+    public static void beliMakanan(Scanner input, ArrayList<MakananMinuman> keranjangBelanja) {
+        System.out.println("\nDaftar Makanan:");
+        System.out.println("1. Nasi Goreng - Rp. 20.000");
+        System.out.println("2. Mie Goreng - Rp. 18.000");
+        System.out.println("3. Sate Ayam - Rp. 25.000");
+        System.out.println("0. Kemabali ke menu\n");
+        System.out.print("Masukkan pilihan anda : ");
+        int pilihanMakanan = input.nextInt();
 
-            switch (pilihanMinuman) {
-                case 1:
-                    keranjangBelanja.add(new Minuman("Es Teh", 5000, 4));
-                    break;
-                case 2:
-                    keranjangBelanja.add(new Minuman("Es Jeruk", 7000, 5));
-                    break;
-                case 3:
-                    keranjangBelanja.add(new Minuman("Kopi", 8000, 6));
-                    break;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-                    return;
-            }
+        switch (pilihanMakanan) {
+            case 1:
+                keranjangBelanja.add(new Makanan(
+                        "Nasi Goreng",
+                        20000,
+                        1));
+                break;
+            case 2:
+                keranjangBelanja.add(new Makanan(
+                        "Mie Goreng",
+                        18000,
+                        2));
+                break;
+            case 3:
+                keranjangBelanja.add(new Makanan(
+                        "Sate Ayam",
+                        25000,
+                        3));
+                break;
+            case 0:
+                System.out.println("Kembali ke menu . ");
+                njajan();
+            default:
+                System.err.println("Pilihan anda tidak valid. ");
+                return;
+        }
+    }
+
+    public static void beliMinuman(Scanner input, ArrayList<MakananMinuman> keranjangBelanja) {
+        System.out.println("\nDaftar Minuman:");
+        System.out.println("1. Es Teh - Rp. 5.000");
+        System.out.println("2. Es Jeruk - Rp. 7.000");
+        System.out.println("3. Kopi - Rp. 8.000\n");
+        System.out.print("Masukkan pilihan anda : ");
+        int pilihanMinuman = input.nextInt();
+
+        switch (pilihanMinuman) {
+            case 1:
+                keranjangBelanja.add(new Minuman("Es Teh", 5000, 4));
+                break;
+            case 2:
+                keranjangBelanja.add(new Minuman("Es Jeruk", 7000, 5));
+                break;
+            case 3:
+                keranjangBelanja.add(new Minuman("Kopi", 8000, 6));
+                break;
+            default:
+                System.out.println("Pilihan tidak valid.");
+                return;
+        }
+    }
+
+    public static double tampilkanCheckout(double totalHarga, ArrayList<MakananMinuman> keranjangBelanja,
+            Scanner input) {
+        System.out.println("\nKeranjang belanja anda : \n");
+        for (MakananMinuman item : keranjangBelanja) {
+            System.out.println(
+                    "ID: " + item.getId() + ", Nama: " + item.getNama() + ", Harga: Rp. " + item.getHarga());
+            totalHarga += item.getHarga();
         }
 
-        public static double tampilkanCheckout(double totalHarga, ArrayList<MakananMinuman> keranjangBelanja,
-                Scanner input) {
-            System.out.println("\nKeranjang belanja anda : \n");
-            for (MakananMinuman item : keranjangBelanja) {
-                System.out.println(
-                        "ID: " + item.getId() + ", Nama: " + item.getNama() + ", Harga: Rp. " + item.getHarga());
-                totalHarga += item.getHarga();
-            }
+        System.out.printf("\nTotal harga belanja anda: Rp. %,.2f\n", totalHarga);
 
-            System.out.printf("\nTotal harga belanja anda: Rp. %,.2f\n", totalHarga);
+        // Meminta pengguna untuk membayar
+        System.out.print("Masukkan jumlah uang yang dibayarkan: Rp. ");
+        double jumlahBayar = input.nextDouble();
 
-            // Meminta pengguna untuk membayar
+        // Memproses pembayaran
+        while (jumlahBayar < totalHarga) {
+            System.out.println("Jumlah uang yang dibayarkan kurang. Mohon masukkan jumlah yang cukup.");
             System.out.print("Masukkan jumlah uang yang dibayarkan: Rp. ");
-            double jumlahBayar = input.nextDouble();
-
-            // Memproses pembayaran
-            while (jumlahBayar < totalHarga) {
-                System.out.println("Jumlah uang yang dibayarkan kurang. Mohon masukkan jumlah yang cukup.");
-                System.out.print("Masukkan jumlah uang yang dibayarkan: Rp. ");
-                jumlahBayar = input.nextDouble();
-            }
-
-            // Menghitung kembalian
-            double kembalian = jumlahBayar - totalHarga;
-            System.out.printf("Terima kasih! Kembalian anda: Rp. %,.2f\n", kembalian);
-
-            return totalHarga;
+            jumlahBayar = input.nextDouble();
         }
 
-    
+        // Menghitung kembalian
+        double kembalian = jumlahBayar - totalHarga;
+        System.out.printf("Terima kasih! Kembalian anda: Rp. %,.2f\n", kembalian);
+
+        return totalHarga;
+    }
+
     public void lihatPembeli() {
         System.out.println("\n --o0 Daftar Pembeli 0o-- ");
         System.out.println("ID \tNama \tUsername");
