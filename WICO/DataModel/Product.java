@@ -1,12 +1,12 @@
 package WICO.DataModel;
 
-public class FoodDrink {
+public class Product {
     private String  namaBarang;
     private int hargaBarang;
     private int stokBarang;
     private String statusBarang;
 
-    public FoodDrink(String namaBarang, int hargaBarang, int stokBarang, String statusBarang) {
+    public Product(String namaBarang, int hargaBarang, int stokBarang, String statusBarang) {
         this.namaBarang = namaBarang;
         this.hargaBarang = hargaBarang;
         this.statusBarang = statusBarang;
@@ -26,6 +26,7 @@ public class FoodDrink {
         return hargaBarang;
     }
 
-
-
+    public int getStokBarang() {
+        return stokBarang;
+    }
 }
