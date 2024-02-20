@@ -3,6 +3,8 @@ package WICO.Database;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.xml.crypto.Data;
+
 import WICO.DataModel.Antrian;
 import WICO.DataModel.Product;
 
@@ -12,6 +14,10 @@ import WICO.DataModel.Product;
 public class DataProduct {
 
     ArrayList<Product> listProduct;
+
+    public DataProduct() {
+        newListProduct();
+    }
 
     public ArrayList<Product> newListProduct() {
         return listProduct = new ArrayList<Product>(
@@ -25,7 +31,42 @@ public class DataProduct {
                     "Es teh Kecil",
                     3000,
                     25,
+                    "Ada"),
+                new Product(
+                    "Kopi racik hitam",
+                    3000,
+                    25,
+                    "Ada"),
+                new Product(
+                    "Este emje",
+                    3000,
+                    25,
+                    "Ada"),
+                new Product(
+                    "Good day Freeze",
+                    3000,
+                    25,
+                    "Ada"),
+                //makanan.. 
+                new Product(
+                    "Soto gabukatuh",
+                    3000,
+                    25,
+                    "Ada"),
+                new Product(
+                    "Ayam goyengan",
+                    3000,
+                    25,
+                    "Ada"),
+                new Product(
+                    "Pentol grubak",
+                    3000,
+                    25,
                     "Ada")));
+    }
+
+    public ArrayList<Product> getListproduct() {
+        return listProduct;
     }
 
     public void addProduct(Product prdk) {
