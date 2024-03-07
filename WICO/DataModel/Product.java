@@ -10,7 +10,7 @@ public class Product {
     private int JumlahBarang;
     private ArrayList<Product> ListProduct;
 
-    public Product(String namaBarang, double hargaBarang, int stokBarang, String statusBarang, int JumlahBarang) {
+    public Product(String namaBarang, int stokBarang, int JumlahBarang, String statusBarang) {
         this.namaBarang = namaBarang;
         this.hargaBarang = hargaBarang;
         this.statusBarang = statusBarang;
