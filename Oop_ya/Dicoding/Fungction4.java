@@ -1,4 +1,4 @@
-package Belajar.Oop_ya;
+package Oop_ya.Dicoding;
 
 class Hewan {
 

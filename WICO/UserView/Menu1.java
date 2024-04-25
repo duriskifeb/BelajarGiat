@@ -1,29 +1,35 @@
 package WICO.UserView;
 
-import javax.swing.text.View;
+import java.util.ArrayList;
 
+
+import WICO.DataModel.User;
 import WICO.ViewModel.ViewMinuman;
-import WICO.ViewModel.ViewPrdk;
+import WICO.ViewModel.ViewMakanan;
 import WICO.util.Util;
 
 public class Menu1 {
-    ViewPrdk viewProduct = new ViewPrdk();
+    ViewMakanan viewProduct = new ViewMakanan();
     ViewMinuman viewMinuman = new ViewMinuman();
 
+
     public void run() {
+        
         menu1();
     }
 
     private void menu1() {
+
         boolean menu1 = true;
         int userInput;
 
         while (menu1) {
             Util.cls();
+            System.out.println("Selamat Datang Di Aplikasi Wico");
             System.out.println("=====================================");
             System.out.println("Menu Aplikasi : \n");
-            System.out.println("1. Lihat semua produk food");
-            System.out.println("2. Lihat semua produk Drink");
+            System.out.println("1. Lihat produk food");
+            System.out.println("2. Lihat produk Drink");
             System.out.println("3. Lihat layanan jaringan wifi-corner");
             System.out.println("0. Keluar dari program ini");
             System.out.println();

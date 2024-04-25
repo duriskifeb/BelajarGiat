@@ -1,4 +1,4 @@
-package Belajar.praktikArray2;
+package praktikArray2;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
