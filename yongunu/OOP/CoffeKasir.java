@@ -65,6 +65,7 @@ public class CoffeKasir {
                     signUp();
                     break;
                 case 0:
+                    LoadingExit();
                     System.out.println("\nTerima Kasih!");
                     break;
                 default:
@@ -80,7 +81,7 @@ public class CoffeKasir {
         String userAdmin = "admin";
         String passAdmin = "admin";
 
-        // clearScreen();
+        clearScreen();
         System.out.println("\n===== LOGIN PAGE =====");
         System.out.print("Username    : ");
         String username = input.nextLine();
@@ -110,6 +111,7 @@ public class CoffeKasir {
         String userAdmin = "admin";
         String passAdmin = "admin";
     
+        clearScreen();
         System.out.println("\n===== SIGN UP =====");
         System.out.print("Name        : ");
         String name = input.nextLine();
@@ -324,5 +326,22 @@ public class CoffeKasir {
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
+    }
+
+    public static void LoadingExit() {
+        try {
+            System.out.print("\nTerima Kasih!");
+            for (int i = 3; i > 0; i--) {
+                System.out.print("...");
+                Thread.sleep(1000); // Jeda 1 detik
+                // Menghapus teks sebelumnya
+                // System.out.print("\r"); // Kembali ke awal baris
+                                                                              // sebelumnya hilang
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Proses interupsi.");
+        }
+        System.out.println(); // Untuk memastikan ada baris baru setelah selesai.
     }
 }
